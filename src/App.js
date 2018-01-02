@@ -1,3 +1,4 @@
+/* eslint react/no-did-mount-set-state: 0 */
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -5,9 +6,8 @@ import './App.css';
 import Movie from './Movie';
 
 class App extends Component {
-
   state = {
-    movies: []
+    movies: [],
   }
 
   async componentDidMount() {
@@ -16,7 +16,7 @@ class App extends Component {
       const movies = await res.json();
 
       this.setState({
-        movies: movies.results
+        movies: movies.results,
       });
     } catch (err) {
       console.log(err);
